@@ -9,3 +9,6 @@ $pass = New-Object Microsoft.Open.AzureAD.Model.PasswordProfile
 $pass.ForceChangePasswordNextLogin($true)
 $pass.ForceChangePasswordNextLogin = $true
 Get-AzureADUser -filter "Displayname eq 'Lukas Alberts'" | Set-AzureADUser -PasswordProfile $pass
+
+#convert a sharedmailbox into a regular mailbox EXO
+Set-Mailbox mailbox@domain.com -type regular
